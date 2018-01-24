@@ -1,16 +1,21 @@
 import React, { Component } from 'react'
-
+import './SkydiveForm.css'
 class SkydiveForm extends Component {
   constructor (props) {
     super(props)
-    this.state = {inputValue: 'initial test input ..'}
+    this.state = {inputValue: ''}
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
   handleChange (e) {
     this.setState({
-        inputValue: e.target.value
-      })
+      inputValue: e.target.value
+    })
   }
+  handleSubmit () {
+    this.props.addSkydive(this.state.inputValue)
+  }
+
   render () {
     return (
       <div>
@@ -19,7 +24,11 @@ class SkydiveForm extends Component {
           value={this.state.inputValue}
           onChange={this.handleChange}
          />
-        <button>Book the Skydive</button>
+        <button
+          onClick={this.handleSubmit}
+        >
+        Click to Book
+        </button>
       </div>
     )
   }
