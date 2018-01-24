@@ -1,7 +1,6 @@
 {
-  "name": "skydives_api",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,11 +10,14 @@
     "app",
     "skydive_api"
   ],
+  "proxy": "http://localhost:3001",
   "author": "Zola",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "express": "^4.16.2",
     "mongoose": "^5.0.1"
-  }
+  },
+  "description": ""
 }
